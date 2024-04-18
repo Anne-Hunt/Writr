@@ -19,6 +19,6 @@ export const AppState = reactive({
   activeProfile: null,
 
   /** @type {Blog[]} */
-  profileProjects: []
+  profileProperties: []
 
 })
