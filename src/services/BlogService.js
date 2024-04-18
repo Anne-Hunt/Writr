@@ -5,6 +5,9 @@ import { api } from "./AxiosService.js"
 
 
 class BlogService {
+    getBlogsById(blogId) {
+        throw new Error('Method not implemented.')
+    }
     async getBlogs() {
         const response = await api.get('api/blogs')
         logger.log('received in service', response.data)
