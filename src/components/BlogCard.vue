@@ -13,8 +13,7 @@ defineProps({
     <h2 class="card-title fs-4 p-2">{{ blog.title }}</h2>
     <img :src="blog.imgUrl" alt="blog-image">
     <div class="sampleText">
-
-        <p class="p-2">{{ blog.body }} ...</p>
+        <p class="overflow p-2">{{ blog.body }} ...</p>
     </div>
 
 </div>
@@ -27,8 +26,12 @@ img{
     object-fit: cover;
 }
 .sampleText{
-    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
     max-height: 20dvh;
+}
+.overflow {
+    text-overflow: ellipsis;
 }
 
 </style>
