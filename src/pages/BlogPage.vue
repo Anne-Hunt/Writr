@@ -5,14 +5,16 @@ import { logger } from '../utils/Logger.js';
 import Pop from '../utils/Pop.js';
 import { useRoute } from 'vue-router';
 import { AppState } from '../AppState.js';
+import ProfileInfo from '../components/ProfileInfo.vue';
 
 const route = useRoute()
 const blogs = computed(()=> AppState.blogs)
 const activeBlog = computed (()=> AppState.activeBlog)
+const profile = computed(()=> AppState.activeProfile)
 
 async function getBlogById(){
     try {
-        // const blogId = route.params.blogId
+        // const blogId = route.params.id
         await blogService.getBlogsById(route.params.blogId)
     } catch (error) {
         Pop.toast('Unable to find that entry', 'error')
@@ -32,12 +34,12 @@ onMounted(()=> {getBlogById()})
             <div class="card-body">
                 <h2>{{ activeBlog.title }}</h2>
                 <p>{{ activeBlog.body }}</p>
-                <RouterLink :to="{name: 'Profile', params: {creatorId: creator.id}}">
-                    <div>
-                        written by: {{ activeBlog.creator.name }}
-                    </div>
-                </RouterLink>
+ 
             </div>
+        </div>
+        <div>
+
+            <ProfileInfo :profile="profile"/>
         </div>
     </section>
 </template>

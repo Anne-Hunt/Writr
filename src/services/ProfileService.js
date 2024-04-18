@@ -6,8 +6,8 @@ import { api } from "./AxiosService.js"
 
 class ProfileService {
     async getProfile(profileId) {
-        const response = await api.get(`api/profiles/${profileId}`)
         AppState.activeProfile = null
+        const response = await api.get(`api/profiles/${profileId}`)
         logger.log('getting id based profile', response.data)
         AppState.activeProfile = new Profile(response.data)
     }

@@ -13,7 +13,7 @@ class BlogService {
     }
 
     async getBlogsById(blogId) {
-        AppState.activeBlog = []
+        // AppState.activeBlog = null
         const response = await api.get(`api/blogs/${blogId}`)
         logger.log('finding blog by Id in service', response.data)
         // const blog = response.data
@@ -23,7 +23,7 @@ class BlogService {
     async getProfileProperties(profileId) {
         const response = await api.get(`api/blogs?creatorId=${profileId}`)
         logger.log('response for profile blogs coming', response.data)
-        AppState.profileProperties = []
+        AppState.profileProperties = null
         const blogs = response.data.map(blog => new Blog(blog))
         AppState.profileProperties = blogs
     }

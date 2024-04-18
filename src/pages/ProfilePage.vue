@@ -6,7 +6,6 @@ import { computed, onMounted } from 'vue';
 import { profileService } from '../services/ProfileService.js';
 import { AppState } from '../AppState.js';
 import { blogService } from '../services/BlogService.js';
-import ProfileBlogs from '../components/ProfileBlogs.vue';
 
 const route = useRoute()
 
@@ -47,7 +46,7 @@ onMounted(()=> {
         <section class="row">
             <div class="col-12">
                 <div v-for="blog in blogs" :key="blog.id" class="mb-2">
-                    <ProfileBlogs :blog="blog"/>
+                    <BlogCard :blog="blog"/>
                 </div>
             </div>
         </section>

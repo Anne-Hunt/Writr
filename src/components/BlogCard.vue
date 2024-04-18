@@ -15,7 +15,6 @@ defineProps({
             <div class="sampleText">
                 <p class="overflow p-2">{{ blog.body }} ...</p>
             </div>
-        
         </div>
     </RouterLink>
 </template>
