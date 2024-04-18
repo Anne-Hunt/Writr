@@ -4,6 +4,7 @@ import { blogService } from '../services/BlogService.js';
 import Pop from '../utils/Pop.js';
 import { logger } from '../utils/Logger.js';
 import { AppState } from '../AppState.js';
+import BlogCard from '../components/BlogCard.vue';
 
 const blogs = computed(()=> AppState.blogs)
 
@@ -23,10 +24,10 @@ onMounted(()=>{
 </script>
 
 <template>
-  <div>
-    Hey yall
-    {{ blogs }}
-  </div>
+  <section v-for="blog in blogs" :key="blog.id" class="row">
+    <BlogCard :blog="blog"/>
+    
+  </section>
 </template>
 
 <style scoped lang="scss">
