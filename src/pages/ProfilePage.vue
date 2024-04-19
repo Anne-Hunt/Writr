@@ -14,7 +14,7 @@ const blogs = computed(()=> AppState.profileProperties)
 
 async function getProfile(){
     try {
-        const profileId = route.params.id
+        // const profileId = route.params.id
         await profileService.getProfile(profileId)
     } catch (error) {
         logger.log('error in getting profile in page', error)

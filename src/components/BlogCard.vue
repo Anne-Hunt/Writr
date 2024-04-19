@@ -8,15 +8,17 @@ defineProps({
 
 
 <template>
-    <RouterLink :to="{name: 'Blog', params: {blogId: blog.id}}">
-        <div class="card">
-            <h2 class="card-title fs-4 p-2">{{ blog.title }}</h2>
-            <img :src="blog.imgUrl" alt="blog-image">
-            <div class="sampleText">
-                <p class="overflow p-2">{{ blog.body }} ...</p>
+    <div>
+        <RouterLink :to="{name: 'Blog', params: {blogId: blog.id}}">
+            <div class="card">
+                <h2 class="card-title fs-4 p-2">{{ blog.title }}</h2>
+                <img :src="blog.imgUrl" alt="blog-image">
+                <div class="sampleText">
+                    <p class="overflow p-2">{{ blog.body }} ...</p>
+                </div>
             </div>
-        </div>
-    </RouterLink>
+        </RouterLink>
+    </div>
 </template>
 
 

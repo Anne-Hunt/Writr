@@ -1,6 +1,5 @@
 <script setup>
 import Pop from '../utils/Pop.js';
-import { AppState } from '../AppState.js';
 import { ref } from 'vue';
 import { logger } from '../utils/Logger.js';
 import { blogService } from '../services/BlogService.js';

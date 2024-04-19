@@ -13,11 +13,13 @@ defineProps({
 
 
 <template>
-    <RouterLink :to="{name: 'Profile', params: {profileId: profile.id}}">
-        <div>
-            written by: {{ profile.name }}
-        </div>
-    </RouterLink>
+    <div>
+        <RouterLink :to="{name: 'Profile', params: {profileId: profile.id}}">
+            <div>
+                written by: {{ profile.name }}
+            </div>
+        </RouterLink>
+    </div>
 </template>
 
 

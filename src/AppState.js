@@ -9,11 +9,13 @@ export const AppState = reactive({
   /** @type {import('./models/Account.js').Account} user info from the database*/
   account: null,
 
+  /**@type { Profile } */
   profile: null,
 
   /** @type {Blog[]} */
   blogs: [],
-  /** @type {{title, body, tags, imgUrl, published}} */
+
+  /** @type { Blog } */
   activeBlog: null,
 
   /**@type {{name, picture, id}} */
