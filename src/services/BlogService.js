@@ -5,6 +5,13 @@ import { api } from "./AxiosService.js"
 
 
 class BlogService {
+    async saveBlog(blogData) {
+        const response = await api.post('api/blogs', blogData)
+        logger.log('received response from save', response.data)
+        const blog = new Blog(response.data)
+        AppState.blogs.push(blog)
+    }
+
     async getBlogs() {
         const response = await api.get('api/blogs')
         logger.log('received in service', response.data)
@@ -13,11 +20,11 @@ class BlogService {
     }
 
     async getBlogsById(blogId) {
-        // AppState.activeBlog = null
+        AppState.activeBlog = null
         const response = await api.get(`api/blogs/${blogId}`)
         logger.log('finding blog by Id in service', response.data)
-        // const blog = response.data
-        AppState.activeBlog = new Blog(response.data)
+        const blog = new Blog(response.data)
+        AppState.activeBlog = blog
     }
 
     async getProfileProperties(profileId) {
